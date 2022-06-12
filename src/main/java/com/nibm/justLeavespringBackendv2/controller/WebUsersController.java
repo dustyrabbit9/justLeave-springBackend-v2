@@ -22,8 +22,12 @@ public class WebUsersController {
 
     @PostMapping("/api/signup")
     public String signUp(@RequestBody WebUsers user){
-        return wuDAO.save(user)+"No. of Accounts Created";
+        return wuDAO.save(user)+" Accounts Created";
+    }
 
+    @PostMapping("/api/login")
+    public List<WebUsers> login(@RequestBody WebUsers user){
+        return wuDAO.getByLogin(user);
     }
 
 

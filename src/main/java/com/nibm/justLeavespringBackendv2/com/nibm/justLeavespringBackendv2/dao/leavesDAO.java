@@ -5,9 +5,7 @@ public interface leavesDAO {
     int save(leaves leave);
     int update(leaves leave, int id);
     int delete(int id);
-
     List<leaves> getAll();
-
     leaves getByIId(int id);
 
 }

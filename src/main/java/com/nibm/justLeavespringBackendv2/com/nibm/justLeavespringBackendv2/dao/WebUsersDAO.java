@@ -7,7 +7,5 @@ public interface WebUsersDAO {
     int update(WebUsers webUser, int id);
     int delete(int id);
     List<WebUsers> getAll();
-    WebUsers getByIId(int id);
-    WebUsers signIn(String email, String password);
-
+    List<WebUsers> getByLogin(WebUsers user);
 }
