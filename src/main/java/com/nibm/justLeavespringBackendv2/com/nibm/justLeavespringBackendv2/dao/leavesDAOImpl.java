@@ -20,8 +20,8 @@ public class leavesDAOImpl implements leavesDAO {
     }
 
     @Override
-    public int update(leaves leave, int id) {
-        return 0;
+    public int update(leaves status, int id) {
+        return jdbcTemplate.update("UPDATE leaves SET status = ? WHERE id = ? VALUE (status, id)", new Object[] {status.getStatus()});
     }
 
     @Override
@@ -33,6 +33,7 @@ public class leavesDAOImpl implements leavesDAO {
     public List<leaves> getAll() {
         return jdbcTemplate.query("SELECT * FROM leaves;", new BeanPropertyRowMapper<leaves>(leaves.class));
     }
+
 
     @Override
     public leaves getByIId(int id) {
