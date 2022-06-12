@@ -12,6 +12,6 @@ public class leavesController {
     @Autowired
     private leavesDAO lDAO;
 
-    @GetMapping("/leaves")
+    @GetMapping("api/leaves")
     public List<leaves> getLeaves() { return lDAO.getAll(); }
 }
