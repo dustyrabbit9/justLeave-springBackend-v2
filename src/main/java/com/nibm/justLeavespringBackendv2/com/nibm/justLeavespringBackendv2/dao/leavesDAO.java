@@ -3,7 +3,7 @@ import com.nibm.justLeavespringBackendv2.model.leaves;
 import java.util.List;
 public interface leavesDAO {
     int save(leaves leave);
-    int update(leaves leave, int id);
+    int update(leaves leave);
     int delete(int id);
     List<leaves> getAll();
     leaves getByIId(int id);

@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "15d6a78f-e25e-4418-9398-8b34ecd03e58",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14057669"
+	},
+	"item": [
+		{
+			"name": "javaspingtest",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": 2,\r\n        \"name\": \"heh\",\r\n        \"role\": \"se\",\r\n    }\r\n]"
+				},
+				"url": {
+					"raw": "localhost:8080/webUsers/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"webUsers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "leaves",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/leaves/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"leaves",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SignUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Chimran Hawk\",\r\n    \"email\": \"chimran@bileka.com\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"chimran@bileka.com\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/leaves",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"leaves"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "leave status update",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 6,\r\n    \"status\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/leaves",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"leaves"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

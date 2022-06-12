@@ -1,0 +1,25 @@
+Members -----------------------------------------------
+Navin Chandrasiri - KAHDSE212F-012
+Imran Rasheed - KAHDSE212F-018
+
+Project Description -----------------------------------
+For the coursework project of WAD in the diploma year, an employee
+management web application was built with a React frontend and a
+Laravel Backend. For this module we implemented the same backend 
+with Java SpringBoot under the MVC architecture. Actually we followed 
+Models, DAOs (Data Access Object) and Controllers in this project.
+
+The whole project is managed with Github and all commits are pushed 
+in to the repos by sending pull request good practices and we 
+published the code as open source. 
+
+
+:::PROJECT:::
+
+SpringBoot Backend ------------------------------------
+https://github.com/dustyrabbit9/justLeave-springBackend-v2
+
+*SQL files and postman collections are included in the repo.
+
+React Frontend ----------------------------------------
+https://github.com/navintc/justLeave-frontend 

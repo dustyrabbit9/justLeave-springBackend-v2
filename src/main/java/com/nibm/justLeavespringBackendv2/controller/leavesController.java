@@ -17,13 +17,15 @@ public class leavesController {
         return lDAO.getAll();
     }
 
-    @PostMapping("/api/addleave")
-    public String addLeave(@RequestBody leaves user){
-        return lDAO.save(user)+"No. of Leaves added";
+    @PatchMapping("/api/leaves")
+    public String updateStatus(leaves leave) {
+        return lDAO.update(leave)+ " Updated leaves Status";
     }
 
-    @PatchMapping
-    public String updateStatus(leaves leave, int id) {
-        return lDAO.update(leave, id)+ "Updated leaves Status";
+    @PostMapping("/api/addleave")
+    public String addLeave(@RequestBody leaves user){
+        return lDAO.save(user)+" No. of Leaves added";
     }
+
+
 }

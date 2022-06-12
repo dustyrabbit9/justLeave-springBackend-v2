@@ -20,8 +20,10 @@ public class leavesDAOImpl implements leavesDAO {
     }
 
     @Override
-    public int update(leaves status, int id) {
-        return jdbcTemplate.update("UPDATE leaves SET status = ? WHERE id = ? VALUE (status, id)", new Object[] {status.getStatus()});
+    public int update(leaves leave) {
+//        return jdbcTemplate.update("UPDATE leaves SET status =" +leave.getStatus() +" WHERE id = "+leave.getId()+";", new Object[] {leave.getStatus()});
+        return jdbcTemplate.update("UPDATE leaves SET status = ? WHERE id = ?;", new Object[] {leave.getStatus(), leave.getId()});
+
     }
 
     @Override
