@@ -15,13 +15,13 @@ public class leavesDAOImpl implements leavesDAO {
     JdbcTemplate jdbcTemplate;
 
     @Override
-    public int save(leaves leave) {
-        return 0;
+    public int save(leaves user) {
+        return jdbcTemplate.update("INSERT INTO leaves (userID, leaveDate, leaveType, status) VALUE (?, ?, 1, 1)", new Object[] {user.getUserID(), user.getLeaveDate()});
     }
 
     @Override
-    public int update(leaves leave, int id) {
-        return 0;
+    public int update(leaves status, int id) {
+        return jdbcTemplate.update("UPDATE leaves SET status = ? WHERE id = ? VALUE (status, id)", new Object[] {status.getStatus()});
     }
 
     @Override
@@ -33,6 +33,7 @@ public class leavesDAOImpl implements leavesDAO {
     public List<leaves> getAll() {
         return jdbcTemplate.query("SELECT * FROM leaves;", new BeanPropertyRowMapper<leaves>(leaves.class));
     }
+
 
     @Override
     public leaves getByIId(int id) {
