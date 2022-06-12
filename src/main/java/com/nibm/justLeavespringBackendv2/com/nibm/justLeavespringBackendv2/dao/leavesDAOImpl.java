@@ -15,8 +15,8 @@ public class leavesDAOImpl implements leavesDAO {
     JdbcTemplate jdbcTemplate;
 
     @Override
-    public int save(leaves leave) {
-        return 0;
+    public int save(leaves user) {
+        return jdbcTemplate.update("INSERT INTO leaves (userID, leaveDate, leaveType, status) VALUE (?, ?, 1, 1)", new Object[] {user.getUserID(), user.getLeaveDate()});
     }
 
     @Override

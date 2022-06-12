@@ -3,6 +3,8 @@ import com.nibm.justLeavespringBackendv2.com.nibm.justLeavespringBackendv2.dao.l
 import com.nibm.justLeavespringBackendv2.model.leaves;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
@@ -13,5 +15,11 @@ public class leavesController {
     private leavesDAO lDAO;
 
     @GetMapping("api/leaves")
-    public List<leaves> getLeaves() { return lDAO.getAll(); }
+    public List<leaves> getLeaves() { return lDAO.getAll();
+    }
+
+    @PostMapping("/api/addleave")
+    public String addLeave(@RequestBody leaves user){
+        return lDAO.save(user)+"No. of Leaves added";
+    }
 }
