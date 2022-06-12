@@ -9,6 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Objects;
 
 @Repository
 public class WebUsersDAOimpl implements WebUsersDAO {
@@ -36,22 +37,16 @@ public class WebUsersDAOimpl implements WebUsersDAO {
         return jdbcTemplate.query("SELECT * FROM web_users;", new BeanPropertyRowMapper<WebUsers>(WebUsers.class));
     }
 
-    @Override
-    public WebUsers getByIId(int id) {
-        return null;
-    }
-
 
 
     @Override
-    public WebUsers signIn(String email, String password) {
-        WebUsers wbTemp = new WebUsers();
-        Logger logger = LoggerFactory.getLogger(WebUsersDAOimpl.class);
+    public List<WebUsers> getByLogin(WebUsers user) {
 
-        wbTemp = jdbcTemplate.queryForObject("SELECT * FROM web_users;", new BeanPropertyRowMapper<WebUsers>(WebUsers.class), email);
-        logger.info(wbTemp.getName());
-
+        List<WebUsers> wpTemp = jdbcTemplate.query("SELECT * FROM web_users WHERE email='"+user.getEmail()+"';", new BeanPropertyRowMapper<WebUsers>(WebUsers.class));
+        if (Objects.equals(wpTemp.get(0).getPassword(), user.getPassword())){
+            return wpTemp;
+        }
         return null;
-    }
 
+    }
 }
